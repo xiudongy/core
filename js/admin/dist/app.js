@@ -18055,7 +18055,7 @@ System.register('flarum/components/BasicsPage', ['flarum/components/Page', 'flar
 
             this.loading = false;
 
-            this.fields = ['forum_title', 'forum_description', 'default_locale', 'show_language_selector', 'default_route', 'welcome_title', 'welcome_message'];
+            this.fields = ['forum_title', 'forum_description', 'default_locale', 'show_language_selector', 'default_route'];
             this.values = {};
 
             var settings = app.data.settings;
@@ -18126,20 +18126,6 @@ System.register('flarum/components/BasicsPage', ['flarum/components/Page', 'flar
                         label
                       );
                     })]
-                  }),
-                  FieldSet.component({
-                    label: app.translator.trans('core.admin.basics.welcome_banner_heading'),
-                    className: 'BasicsPage-welcomeBanner',
-                    children: [m(
-                      'div',
-                      { className: 'helpText' },
-                      app.translator.trans('core.admin.basics.welcome_banner_text')
-                    ), m(
-                      'div',
-                      { className: 'BasicsPage-welcomeBanner-input' },
-                      m('input', { className: 'FormControl', value: this.values.welcome_title(), oninput: m.withAttr('value', this.values.welcome_title) }),
-                      m('textarea', { className: 'FormControl', value: this.values.welcome_message(), oninput: m.withAttr('value', this.values.welcome_message) })
-                    )]
                   }),
                   Button.component({
                     type: 'submit',
